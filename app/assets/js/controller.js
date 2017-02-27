@@ -4,7 +4,7 @@ app.controller('SearchController', function($scope, $http) {
 		$scope.getdata = function() {
 			if($scope.keyd.length !="") {
 				$scope.tweets = "";
-				var url = "search.php?query="+$scope.keyd;
+				var url = "api/search.php?query="+$scope.keyd;
 				$('.loading').show();
 				 $http.get(url).then(function(response) {
         			$scope.tweets = response.data.statuses;
